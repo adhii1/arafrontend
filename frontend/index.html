@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARA</title>
+  <link rel="icon" href="images/STICKER.jpg.jpeg" type="image/png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+
+      <!-- LEFT SIDE (LOGO + NAME) -->
+      <div class="logo-box">
+        <img src="images/top1.png" alt="logo">
+        <span>ARA</span>
+      </div>
+
+      <!-- RIGHT SIDE MENU -->
+      <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#fragrance">Fragrances</a>
+        <a href="#order">Order</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- REPLACE IMAGE BELOW -->
+    <img src="images/home.png" alt="hero">
+
+    <div class="hero-box">
+      <h1>ARA by space design studioz</h1>
+      <div class="line"></div>
+      <p>Find your Fragrance for soul.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+
+      <!-- LEFT IMAGE -->
+      <div class="about-image">
+        <img src="images/about.png" alt="About ARA">
+      </div>
+
+      <!-- RIGHT TEXT -->
+      <div class="about-content">
+        <h2>About ARA</h2>
+        <div class="line"></div>
+
+        <p>
+          ARA by Space Design Studioz is a premium fragrance brand crafted for calm,
+          elegance, and everyday rituals. Our agarbathi and dhoop cones are designed
+          with natural ingredients to deliver a soft, non-irritating aroma that gently
+          fills your space with warmth and tranquility.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-section">
+    <div class="services-container">
+
+      <h2>SERVICES</h2>
+      <div class="line center-line"></div>
+
+      <div class="services-grid">
+
+        <!-- SERVICE 1 -->
+        <div class="service-card">
+          <img src="images/service1.png" alt="Incense Sticks">
+
+          <h3>Premium Incense Sticks</h3>
+
+          <p>
+            Our premium fragrances are crafted to offer a rich, refined, and long-lasting aroma
+            that brings a sense of elegance and depth to your space.
+          </p>
+
+          <p class="found">
+            Found in: Sugandh, Sindhu, Kewda, Banras, Sandalwood
+          </p>
+        </div>
+
+        <!-- SERVICE 2 -->
+        <div class="service-card">
+          <img src="images/service2.png" alt="Calming Aromas">
+
+          <h3>Calming Aromas</h3>
+
+          <p>
+            Our calming fragrances are designed to create a soothing and peaceful atmosphere,
+            helping you unwind and relax.
+          </p>
+
+          <p class="found">
+            Found in: Lavender, Rose, Jasmine, Sambrani
+          </p>
+        </div>
+
+        <!-- SERVICE 3 -->
+        <div class="service-card">
+          <img src="images/service3.png" alt="Dhoop Cones">
+
+          <h3>Premium Dhoop Cones</h3>
+
+          <p>
+            Our premium dhoop cones are crafted to deliver a richer, more intense fragrance
+            experience that quickly fills your space with depth and warmth.
+          </p>
+
+          <p class="found">
+            Found in: Kewda, Rose, Sugandh
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SHOP CAROUSELS -->
+  <section id="shop" class="shop-section light">
+    <div class="container center">
+      <h2>Our Collection</h2>
+      <div class="line center-line"></div>
+
+      <!-- BIG BOX -->
+      <div class="category-section">
+        <h3 class="category-title">Big Box</h3>
+        <div class="carousel-container">
+          <button class="carousel-btn prev-btn" onclick="slideCarousel('big-box-carousel', -1)">&#10094;</button>
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="big-box-carousel">
+              <div class="product-card">
+                <img src="images/lavb3.png" alt="Lavender">
+                <h3>Lavender</h3>
+                <div class="stars">★★★★★</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Lavender (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/jawb4.png" alt="Jawadhu">
+                <h3>Jawadhu</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Jawadhu (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/hib4.png" alt="Hibiscus">
+                <h3>Hibiscus</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Hibiscus (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/jasb3.png" alt="Jasmine">
+                <h3>Jasmine</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Jasmine (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/kewb2.png" alt="Kewda">
+                <h3>Kewda</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kewda (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/sugb1.png" alt="Sugandh">
+                <h3>Sugandh</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kewda (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/sindhub2.png" alt="Sindhu">
+                <h3>Sindhu</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kewda (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/banrasbig1.png" alt="Banaras">
+                <h3>Banaras</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kewda (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/pinb1.png" alt="Pineapple">
+                <h3>Pineapple</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Pineapple (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/sambranib1.png" alt="Sambrani">
+                <h3>Sambrani</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Sambrani (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/rosb4.png" alt="Rose">
+                <h3>Rose</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Rose (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/sanb2.png" alt="Sandalwood">
+                <h3>Sandalwood</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Sandalwood (Big Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/kasb1.png" alt="Kasturi">
+                <h3>Kasturi</h3>
+                <div class="stars">★★★★★</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kasturi (Big Box)', this)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next-btn" onclick="slideCarousel('big-box-carousel', 1)">&#10095;</button>
+        </div>
+      </div>
+
+      <!-- SMALL BOX -->
+      <div class="category-section">
+        <h3 class="category-title">Small Box</h3>
+        <div class="carousel-container">
+          <button class="carousel-btn prev-btn" onclick="slideCarousel('small-box-carousel', -1)">&#10094;</button>
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="small-box-carousel">
+              <div class="product-card">
+                <img src="images/jasb3.png" alt="Jasmine">
+                <h3>Jasmine</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Jasmine (Small Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/kewb2.png" alt="Kewda">
+                <h3>Kewda</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kewda (Small Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/lavb4.png" alt="Lavender">
+                <h3>Lavender</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kewda (Small Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/rosb4.png" alt="Rose">
+                <h3>Rose</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Rose (Small Box)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/sanb2.png" alt="Sandalwood">
+                <h3>Sandalwood</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Sandalwood (Small Box)', this)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next-btn" onclick="slideCarousel('small-box-carousel', 1)">&#10095;</button>
+        </div>
+      </div>
+
+      <!-- DHOOP CONES -->
+      <div class="category-section">
+        <h3 class="category-title">Dhoop Cones</h3>
+        <div class="carousel-container">
+          <button class="carousel-btn prev-btn" onclick="slideCarousel('dhoop-carousel', -1)">&#10094;</button>
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="dhoop-carousel">
+              <div class="product-card">
+                <img src="images/sandalwood 3.jpeg" alt="Sandalwood">
+                <h3>Sandalwood</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Rose (Dhoop)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/kewda2.png" alt="Kewda">
+                <h3>Kewda</h3>
+                <div class="stars">★★★★☆</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Kewda (Dhoop)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/rose2.png" alt="Rose">
+                <h3>Rose</h3>
+                <div class="stars">★★★★★</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Lavender (Dhoop)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/lavender2.png" alt="Lavender">
+                <h3>Lavender</h3>
+                <div class="stars">★★★★★</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Lavender (Dhoop)', this)">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="images/sindhu4.png" alt="Sindhu">
+                <h3>Sindhu</h3>
+                <div class="stars">★★★★★</div>
+                <div class="qty-selector">
+                  <button type="button" onclick="changeQty(this, -1)">-</button>
+                  <input type="number" value="1" min="1" readonly>
+                  <button type="button" onclick="changeQty(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Lavender (Dhoop)', this)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next-btn" onclick="slideCarousel('dhoop-carousel', 1)">&#10095;</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section class="section" id="order">
+    <div class="container center">
+
+      <h2>Checkout / Order Now</h2>
+      <div class="line center-line"></div>
+
+      <div class="checkout-wrapper">
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+          <h3>Your Cart</h3>
+          <ul id="cartItemsList">
+            <li>Cart is empty</li>
+          </ul>
+        </div>
+
+        <!-- Form -->
+        <form id="orderForm" class="styled-form">
+          <input type="text" id="name" placeholder="Full Name" required>
+          <input type="text" id="phone" placeholder="Phone Number" required>
+
+          <h4 class="address-title">Delivery Address</h4>
+          <input type="text" id="houseNo" placeholder="House No / Flat No" required>
+          <input type="text" id="street1" placeholder="Street 1" required>
+          <input type="text" id="street2" placeholder="Street 2 (Optional)">
+          <input type="text" id="landmark" placeholder="Landmark" required>
+          <div class="form-row">
+            <input type="text" id="city" placeholder="City" required>
+            <input type="text" id="state" placeholder="State" required>
+          </div>
+          <input type="text" id="pincode" placeholder="Pincode" required>
+
+          <button type="submit" class="submit-btn" id="submitOrderBtn" disabled>Proceed to Pay</button>
+        </form>
+      </div>
+
+
+    </div>
+  </section>
+  <!-- SUCCESS POPUP -->
+  <div id="successPopup" class="popup">
+    <div class="popup-box">
+      <h3>Order Placed Successfully</h3>
+      <p>
+        Your order has been successfully placed!
+        For faster service and verification, you will now be redirected to WhatsApp
+        to confirm your order and location.
+      </p>
+      <button onclick="goToWhatsApp()">Finish</button>
+    </div>
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
