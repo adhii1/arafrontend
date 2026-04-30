@@ -1,13 +1,7 @@
 // ===== GLOBAL VARIABLES =====
 // If running on Netlify or GitHub Pages, point this to your backend Railway URL.
 // IMPORTANT: Update this URL to match your EXACT Railway deployment URL!
-let BASE_URL = "https://ara-production.up.railway.app";
-
-if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-  BASE_URL = "http://localhost:3000";
-} else if (window.location.hostname.includes("railway.app")) {
-  BASE_URL = ""; // Use relative paths if frontend & backend are both on Railway
-}
+let BASE_URL = "https://arabackend-s633.onrender.com";
 
 let whatsappURL = "";
 let cart = []; // Store cart items
