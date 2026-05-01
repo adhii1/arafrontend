@@ -6,6 +6,16 @@ let BASE_URL = "https://arabackend-s633.onrender.com";
 let whatsappURL = "";
 let cart = []; // Store cart items
 
+// ===== MOBILE MENU LOGIC =====
+function toggleMenu() {
+  const menu = document.getElementById("nav-menu");
+  const hamburger = document.getElementById("hamburger");
+  // Only toggle if we are on mobile (hamburger is visible)
+  if (window.getComputedStyle(hamburger).display !== 'none') {
+    menu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  }
+}
 
 // ===== CAROUSEL LOGIC =====
 function slideCarousel(carouselId, direction) {
