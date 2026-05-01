@@ -724,8 +724,25 @@ body {
   .category-title {
     text-align: center;
   }
+  .carousel-track-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .carousel-track-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-track {
+    gap: 15px; /* Prevent huge gaps */
+  }
   .carousel-track .product-card {
-    min-width: 260px; /* Adjusted to fit one nicely but show hint of next */
+    min-width: 100%; /* Force exactly 1 card to fit the screen width */
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    box-sizing: border-box;
   }
   .product-card {
     padding: 15px;
@@ -772,9 +789,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .carousel-track .product-card {
-    min-width: 220px;
-  }
   .hero img {
     height: 350px;
   }
