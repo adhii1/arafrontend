@@ -225,3 +225,16 @@ function goToWhatsApp() {
   window.open(whatsappURL, "_blank");
   document.getElementById("successPopup").style.display = "none";
 }
+
+// ===== POLICY MODALS =====
+function openPolicyModal(modalId) {
+  document.getElementById(modalId).style.display = 'flex';
+}
+function closePolicyModal(modalId) {
+  document.getElementById(modalId).style.display = 'none';
+}
+function closePolicyModalOutside(event, modalId) {
+  if (event.target.id === modalId) {
+    closePolicyModal(modalId);
+  }
+}
