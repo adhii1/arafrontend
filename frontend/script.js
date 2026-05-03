@@ -21,8 +21,16 @@ function toggleMenu() {
 function slideCarousel(carouselId, direction) {
   const track = document.getElementById(carouselId);
   const wrapper = track.parentElement;
-  // Scroll by 80% of the visible container width
-  const scrollAmount = wrapper.clientWidth * 0.8;
+  
+  let scrollAmount;
+  if (window.innerWidth <= 768) {
+    const card = track.querySelector('.product-card');
+    const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+    scrollAmount = card.offsetWidth + gap;
+  } else {
+    scrollAmount = wrapper.clientWidth * 0.8;
+  }
+  
   wrapper.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
 
@@ -38,12 +46,14 @@ function changeQty(btn, amount) {
 function addToCart(productName, btn) {
   const input = btn.parentElement.querySelector('.qty-selector input');
   const qty = parseInt(input.value) || 1;
+  const priceText = btn.parentElement.querySelector('.price').innerText;
+  const price = parseInt(priceText.replace(/\D/g, ''));
 
   const existingItem = cart.find(item => item.name === productName);
   if (existingItem) {
     existingItem.qty += qty;
   } else {
-    cart.push({ name: productName, qty: qty });
+    cart.push({ name: productName, qty: qty, price: price });
   }
   updateCartDisplay();
 
@@ -60,25 +70,34 @@ function removeFromCart(index) {
 function updateCartDisplay() {
   const cartList = document.getElementById("cartItemsList");
   const submitBtn = document.getElementById("submitOrderBtn");
+  const totalDisplay = document.getElementById("cartTotalDisplay");
 
   cartList.innerHTML = "";
 
   if (cart.length === 0) {
     cartList.innerHTML = "<li>Cart is empty</li>";
     submitBtn.disabled = true;
+    if (totalDisplay) totalDisplay.style.display = "none";
     return;
   }
 
   submitBtn.disabled = false;
+  let totalAmount = 0;
 
   cart.forEach((item, index) => {
+    totalAmount += item.price * item.qty;
     const li = document.createElement("li");
     li.innerHTML = `
-      <span>${item.name} x ${item.qty}</span>
+      <span>${item.name} x ${item.qty} (₹${item.price * item.qty})</span>
       <span class="remove-btn" onclick="removeFromCart(${index})">Remove</span>
     `;
     cartList.appendChild(li);
   });
+
+  if (totalDisplay) {
+    totalDisplay.innerText = "Total: ₹" + totalAmount;
+    totalDisplay.style.display = "block";
+  }
 }
 
 // ===== ORDER FORM SUBMIT & RAZORPAY =====
@@ -181,9 +200,13 @@ document.getElementById("orderForm").addEventListener("submit", async function (
 
 function processOrderAfterPayment(name, phone, fullAddress, paymentId) {
   // ===== WHATSAPP MESSAGE =====
-  let cartItemsText = cart.map(item => `- ${item.name} x ${item.qty}`).join("\n");
+  let totalAmount = 0;
+  let cartItemsText = cart.map(item => {
+    totalAmount += item.price * item.qty;
+    return `- ${item.name} x ${item.qty} (₹${item.price * item.qty})`;
+  }).join("\n");
 
-  let message = `🛒 *New Order - ARA*\n\n*Payment Success! ID:* ${paymentId}\n\n*Customer Details:*\nName: ${name}\nPhone: ${phone}\nAddress: ${fullAddress}\n\n*Order Items:*\n${cartItemsText}`;
+  let message = `🛒 *New Order - ARA*\n\n*Payment Success! ID:* ${paymentId}\n\n*Customer Details:*\nName: ${name}\nPhone: ${phone}\nAddress: ${fullAddress}\n\n*Order Items:*\n${cartItemsText}\n\n*Total Amount:* ₹${totalAmount}`;
 
   let whatsappNumber = "919108433694";
   whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
