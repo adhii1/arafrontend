@@ -517,6 +517,49 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <span onclick="openPolicyModal('privacyModal')">Privacy Policy</span>
+      <span onclick="openPolicyModal('termsModal')">Terms &amp; Conditions</span>
+      <span onclick="openPolicyModal('refundModal')">Refund Policy</span>
+      <span onclick="openPolicyModal('contactModal')">Contact Information</span>
+    </div>
+  </footer>
+
+  <!-- POLICY MODALS -->
+  <div id="privacyModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'privacyModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('privacyModal')">&times;</span>
+      <h4>Privacy Policy</h4>
+      <p>We respect customer privacy and securely process order information only for order fulfillment and support.</p>
+    </div>
+  </div>
+
+  <div id="termsModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'termsModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('termsModal')">&times;</span>
+      <h4>Terms &amp; Conditions</h4>
+      <p>Orders are processed after successful payment confirmation. Product availability and delivery timelines may vary.</p>
+    </div>
+  </div>
+
+  <div id="refundModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'refundModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('refundModal')">&times;</span>
+      <h4>Refund Policy</h4>
+      <p>Refunds/replacements are considered only for damaged or incorrect products reported within 24 hours of delivery.</p>
+    </div>
+  </div>
+
+  <div id="contactModal" class="policy-modal" onclick="closePolicyModalOutside(event, 'contactModal')">
+    <div class="policy-box">
+      <span class="close-policy" onclick="closePolicyModal('contactModal')">&times;</span>
+      <h4>Contact Information</h4>
+      <p>Space Design Studioz, India<br>Phone: +91 7019268918</p>
+    </div>
+  </div>
+
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="script.js"></script>
 
