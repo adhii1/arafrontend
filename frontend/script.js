@@ -208,7 +208,7 @@ function processOrderAfterPayment(name, phone, fullAddress, paymentId) {
 
   let message = `🛒 *New Order - ARA*\n\n*Payment Success! ID:* ${paymentId}\n\n*Customer Details:*\nName: ${name}\nPhone: ${phone}\nAddress: ${fullAddress}\n\n*Order Items:*\n${cartItemsText}\n\n*Total Amount:* ₹${totalAmount}`;
 
-  let whatsappNumber = "919108433694";
+  let whatsappNumber = "917019268918";
   whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   // ===== SHOW POPUP =====
